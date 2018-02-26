@@ -58,18 +58,18 @@ public class Book {
     }
 
     public String getFormattedPublisherName() {
-        return String.format("%s, %s", publisherName, publisherCity);
+        return String.format("%s, %s", getPublisherName(), getPublisherCity());
     }
 
     public String getFormattedAuthorName() {
-        return String.format("%s, %s", authorLastName, authorFirstName);
+        return String.format("%s, %s", getAuthorLastName(), getAuthorFirstName());
     }
 
     public String getFormattedBookName() {
         return String.format(
                 "%s (%s)\nWritten by %s\nPublished by %s",
-                bookTitle,
-                bookYear,
+                getBookTitle(),
+                getBookYear(),
                 getFormattedAuthorName(),
                 getFormattedPublisherName()
         );
