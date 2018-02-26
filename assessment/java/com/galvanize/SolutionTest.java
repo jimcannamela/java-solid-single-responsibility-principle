@@ -124,8 +124,8 @@ public class SolutionTest {
         author.invoke("setLastName", "Beck");
 
         InstanceProxy publisher = _Publisher.newInstance();
-        author.invoke("setName", "Addison-Wesley");
-        author.invoke("setCity", "Boston");
+        publisher.invoke("setName", "Addison-Wesley");
+        publisher.invoke("setCity", "Boston");
 
         InstanceProxy book = _Book.newInstance();
         book.invoke("setTitle", "XP Explained");
