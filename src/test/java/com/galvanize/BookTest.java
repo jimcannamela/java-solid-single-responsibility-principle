@@ -8,18 +8,23 @@ public class BookTest {
 
     @Test
     public void bookFormattedNameReturnsCorrectly() {
+        Author author = new Author();
+        author.setFirstName("Eric");
+        author.setLastName("Evans");
+        Publisher publisher = new Publisher();
+        publisher.setName("Addison-Wesley");
+        publisher.setCity("New York");
         Book book = new Book();
-        book.setAuthorFirstName("Eric");
-        book.setAuthorLastName("Evans");
-        book.setBookTitle("Domain-Driven Design");
-        book.setBookYear(2004);
-        book.setPublisherName("Addison-Wesley");
-        book.setPublisherCity("New York");
+        book.setTitle("Domain-Driven Design");
+        book.setYear(2004);
+        book.setAuthor(author);
+        book.setPublisher(publisher);
 
         String expected = "Domain-Driven Design (2004)\n" +
                 "Written by Evans, Eric\n" +
                 "Published by Addison-Wesley, New York";
-
-        assertEquals(expected, book.getFormattedBookName());
+        System.out.println("Expected: " + expected);
+        System.out.println("Actual: " + book.getFormattedName());
+        assertEquals(expected, book.getFormattedName());
     }
 }

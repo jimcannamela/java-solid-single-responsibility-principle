@@ -2,76 +2,52 @@ package com.galvanize;
 
 public class Book {
 
-    private String bookTitle;
-    private int bookYear;
-    private String authorFirstName;
-    private String authorLastName;
-    private String publisherName;
-    private String publisherCity;
+    private String title;
+    private int year;
 
-    public String getBookTitle() {
-        return bookTitle;
+
+    private Author author = new Author();
+    private Publisher publisher = new Publisher();
+
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setBookTitle(String bookName) {
-        this.bookTitle = bookName;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
-    public int getBookYear() {
-        return bookYear;
+    public Publisher getPublisher() {
+        return publisher;
     }
 
-    public void setBookYear(int bookYear) {
-        this.bookYear = bookYear;
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
-    public String getAuthorFirstName() {
-        return authorFirstName;
+    public String getTitle() {
+        return title;
     }
 
-    public void setAuthorFirstName(String authorFirstName) {
-        this.authorFirstName = authorFirstName;
+    public void setTitle(String bookName) {
+        this.title = bookName;
     }
 
-    public String getAuthorLastName() {
-        return authorLastName;
+    public int getYear() {
+        return year;
     }
 
-    public void setAuthorLastName(String authorLastName) {
-        this.authorLastName = authorLastName;
+    public void setYear(int bookYear) {
+        this.year = bookYear;
     }
 
-    public String getPublisherName() {
-        return publisherName;
-    }
-
-    public void setPublisherName(String publisherName) {
-        this.publisherName = publisherName;
-    }
-
-    public String getPublisherCity() {
-        return publisherCity;
-    }
-
-    public void setPublisherCity(String publisherCity) {
-        this.publisherCity = publisherCity;
-    }
-
-    public String getFormattedPublisherName() {
-        return String.format("%s, %s", getPublisherName(), getPublisherCity());
-    }
-
-    public String getFormattedAuthorName() {
-        return String.format("%s, %s", getAuthorLastName(), getAuthorFirstName());
-    }
-
-    public String getFormattedBookName() {
+    public String getFormattedName() {
         return String.format(
                 "%s (%s)\nWritten by %s\nPublished by %s",
-                getBookTitle(),
-                getBookYear(),
-                getFormattedAuthorName(),
-                getFormattedPublisherName()
+                getTitle(),
+                getYear(),
+                author.getFormattedName(),
+                publisher.getFormattedName()
         );
     }
 }
